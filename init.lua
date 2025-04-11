@@ -438,6 +438,14 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Notes
+      vim.keymap.set('n', '<leader>so', function()
+        builtin.live_grep {
+          cwd = '~/Documents/Notes/',
+          prompt_title = 'Live Grep in Notes',
+        }
+      end, { desc = '[S]earch N[o]tes' })
     end,
   },
 
